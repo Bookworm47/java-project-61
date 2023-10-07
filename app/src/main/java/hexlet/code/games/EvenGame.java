@@ -24,8 +24,8 @@ public class EvenGame {
                 System.out.println("Correct!");
             } else {
                 String correctAnswer = userResult.equals("yes") ? "no" : "yes";
-                System.out.format("%s is wrong answer ;(. Correct answer was '%s'.\nLet's try again, Bill!",
-                        userResult, correctAnswer);
+                System.out.format("%s is wrong answer ;(. Correct answer was '%s'.\nLet's try again, %s!",
+                        userResult, correctAnswer, userName);
                 System.exit(0);
             }
         }
