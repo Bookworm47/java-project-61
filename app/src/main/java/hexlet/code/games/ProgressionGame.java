@@ -15,8 +15,8 @@ public class ProgressionGame {
         System.out.println("What number is missing in the progression?");
         for (int i = 0; i < 3; i++) {
             progressionLogic();
-            System.out.format("Question: " + Arrays.toString(stringProgression).replaceAll("\\[", "")
-                    .replaceAll("]", "") + "\n");
+            System.out.format("Question: " + Arrays.toString(stringProgression).
+                    replaceAll("[,\\[\\]]", "") + "\n");
             int userResult = sc.nextInt();
             if (userResult == correctResult) {
                 System.out.println("Correct!");
