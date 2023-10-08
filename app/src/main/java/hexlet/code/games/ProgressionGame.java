@@ -6,8 +6,8 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class ProgressionGame {
-    private static final int progressionLength = 10;
-    private static String[] stringProgression = new String[progressionLength];
+    private static final int PROGRESSIONLENGTH = 10;
+    private static String[] stringProgression = new String[PROGRESSIONLENGTH];
     private static int correctResult;
     public static void arithmeticProgression() {
         String userName = Engine.greet();
@@ -25,8 +25,7 @@ public class ProgressionGame {
     }
 
     static int progressionLogic() {
-        final int progressionLength = 10;
-        int[] progression = new int[progressionLength];
+        int[] progression = new int[PROGRESSIONLENGTH];
         final int rangeOfFirstProgressionNumber = 100;
         final int randSecNumPos = 10;
         progression[0] = Engine.randomNumber(rangeOfFirstProgressionNumber);
