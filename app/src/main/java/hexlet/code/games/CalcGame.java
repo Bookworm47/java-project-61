@@ -24,10 +24,10 @@ public class CalcGame {
 
     static void calcGameLogic() {
         final int operandNumber = 3;
-        int operandRn = (int) (Math.random() * operandNumber) + 1;
+        int operandRn = (int) (Math.random() * operandNumber);
         num1 = Engine.randomNumber(Engine.getRandomRange());
         num2 = Engine.randomNumber(Engine.getRandomRange());
-        String[] chooseOperand = new String[]{"+", "-", " *"};
+        String[] chooseOperand = new String[]{"+", "-", "*"};
         switch (chooseOperand[operandRn]) {
             case "+":
             default:
