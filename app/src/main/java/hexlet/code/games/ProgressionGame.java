@@ -17,6 +17,7 @@ public class ProgressionGame {
             correctResult = progressionLogic();
             System.out.format("Question: " + Arrays.toString(stringProgression).
                     replaceAll("[,\\[\\]]", "") + "\n");
+            System.out.print("Your answer: ");
             int userResult = sc.nextInt();
             Engine.answerCorrectOrNot(userResult, correctResult, userName);
         }

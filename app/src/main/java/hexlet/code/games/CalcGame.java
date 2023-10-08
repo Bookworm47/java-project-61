@@ -16,6 +16,7 @@ public class CalcGame {
         for (int i = 0; i < Engine.getAnswerCount(); i++) {
             calcGameLogic();
             System.out.format("Question: %d %s %d\n", num1, operand, num2);
+            System.out.print("Your answer: ");
             int userResult = sc.nextInt();
             Engine.answerCorrectOrNot(userResult, correctResult, userName);
         }

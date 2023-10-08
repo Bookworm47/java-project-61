@@ -13,6 +13,7 @@ public class PrimeGame {
         for (int i = 0; i < Engine.getAnswerCount(); i++) {
             int randomNumber = Engine.randomNumber(Engine.getRandomRange());
             System.out.format("Question: %d\n", randomNumber);
+            System.out.print("Your answer: ");
             String userResult = sc.nextLine();
             String correctResult = userResult.equals("yes") ? "no" : "yes";
             boolean primeNumber = isPrime(randomNumber);

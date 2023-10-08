@@ -14,6 +14,7 @@ public class GCDGame {
         for (int i = 0; i < Engine.getAnswerCount(); i++) {
             int correctResult = getGCD();
             System.out.format("Question: %d %d\n", num1, num2);
+            System.out.print("Your answer: ");
             int userResult = sc.nextInt();
             Engine.answerCorrectOrNot(userResult, correctResult, userName);
         }
@@ -21,9 +22,10 @@ public class GCDGame {
     }
 
     static int getGCD() {
+        final int randMinRange = 1;
         final int randomRange = 100;
-        num1 = Engine.randomNumber(randomRange);
-        num2 = Engine.randomNumber(randomRange);
+        num1 = Engine.randomNumber(randomRange) + randMinRange;
+        num2 = Engine.randomNumber(randomRange) + randMinRange;
         return Engine.gcd(num1, num2);
     }
 }
