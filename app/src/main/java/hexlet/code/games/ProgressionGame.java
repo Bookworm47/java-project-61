@@ -6,7 +6,8 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class ProgressionGame {
-    private static String[] stringProgression = new String[10];
+    private static final int progressionLength = 10;
+    private static String[] stringProgression = new String[progressionLength];
     private static int correctResult;
     public static void arithmeticProgression() {
         String userName = Engine.greet();

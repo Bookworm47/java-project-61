@@ -27,17 +27,18 @@ public class CalcGame {
         int operandRn = (int) (Math.random() * operandNumber) + 1;
         num1 = Engine.randomNumber(Engine.getRandomRange());
         num2 = Engine.randomNumber(Engine.getRandomRange());
-        switch (operandRn) {
-            case 1:
+        String[] chooseOperand = new String[]{"+", "-", " *"};
+        switch (chooseOperand[operandRn]) {
+            case "+":
             default:
                 correctResult = num1 + num2;
                 operand = '+';
                 break;
-            case 2:
+            case "-":
                 correctResult = num1 - num2;
                 operand = '-';
                 break;
-            case 3:
+            case "*":
                 correctResult = num1 * num2;
                 operand = '*';
                 break;

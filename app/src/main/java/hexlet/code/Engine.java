@@ -10,13 +10,13 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Engine {
-    private static final int answerCount = 3;
-    private static final int randomRange = 100;
+    private static final int ANSWERCOUNT = 3;
+    private static final int RANDOMRANGE = 100;
     public static int getAnswerCount() {
-        return answerCount;
+        return ANSWERCOUNT;
     }
     public static int getRandomRange() {
-        return randomRange;
+        return RANDOMRANGE;
     }
 
     public static String greet() {
