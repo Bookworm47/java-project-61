@@ -10,8 +10,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Engine {
-    private static int answerCount = 3;
-    private static int randomRange = 100;
+    private static final int answerCount = 3;
+    private static final int randomRange = 100;
     public static int getAnswerCount() {
         return answerCount;
     }
@@ -58,29 +58,29 @@ public class Engine {
                 + "6 - Prime\n"
                 + "0 - Exit");
         Scanner sc = new Scanner(System.in);
-        int startNumber = sc.nextInt();
+        String startNumber = sc.nextLine();
         System.out.println("Your choice: " + startNumber + "\n");
 
         switch (startNumber) {
-            case 0:
+            case "0":
             default:
                 System.exit(0);
-            case 1:
+            case "1":
                 Engine.greet();
                 break;
-            case 2:
+            case "2":
                 EvenGame.evenGame();
                 break;
-            case 3:
+            case "3":
                 CalcGame.calcGame();
                 break;
-            case 4:
+            case "4":
                 GCDGame.gcdGame();
                 break;
-            case 5:
+            case "5":
                 ProgressionGame.arithmeticProgression();
                 break;
-            case 6:
+            case "6":
                 PrimeGame.primeGame();
                 break;
         }

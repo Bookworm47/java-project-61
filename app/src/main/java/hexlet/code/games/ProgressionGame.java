@@ -25,8 +25,8 @@ public class ProgressionGame {
     static int progressionLogic() {
         final int progressionLength = 10;
         int[] progression = new int[progressionLength];
-        int rangeOfFirstProgressionNumber = 100;
-        int randSecNumPos = 10;
+        final int rangeOfFirstProgressionNumber = 100;
+        final int randSecNumPos = 10;
         progression[0] = Engine.randomNumber(rangeOfFirstProgressionNumber);
         int secretNumberPosition = Engine.randomNumber(randSecNumPos);
         for (int i = 1; i < progression.length; i++) {

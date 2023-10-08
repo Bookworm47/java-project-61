@@ -23,7 +23,7 @@ public class CalcGame {
     }
 
     static void calcGameLogic() {
-        int operandNumber = 3;
+        final int operandNumber = 3;
         int operandRn = (int) (Math.random() * operandNumber) + 1;
         num1 = Engine.randomNumber(Engine.getRandomRange());
         num2 = Engine.randomNumber(Engine.getRandomRange());

@@ -21,7 +21,7 @@ public class GCDGame {
     }
 
     static int getGCD() {
-        int randomRange = 100;
+        final int randomRange = 100;
         num1 = Engine.randomNumber(randomRange);
         num2 = Engine.randomNumber(randomRange);
         return Engine.gcd(num1, num2);

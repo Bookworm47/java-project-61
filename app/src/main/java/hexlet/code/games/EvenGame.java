@@ -10,8 +10,8 @@ public class EvenGame {
         String userName = Engine.greet();
         Scanner sc = new Scanner(System.in);
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        for (int i = 0; i < 3; i++) {
-            int randomNumber = Engine.randomNumber(10);
+        for (int i = 0; i < Engine.getAnswerCount(); i++) {
+            int randomNumber = Engine.randomNumber(Engine.getRandomRange());
             System.out.println("Question: " + randomNumber);
             String userResult = sc.nextLine();
             if (userResult.equals("yes") || userResult.equals("no")) {
