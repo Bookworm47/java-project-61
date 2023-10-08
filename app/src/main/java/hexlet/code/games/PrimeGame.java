@@ -10,17 +10,17 @@ public class PrimeGame {
         String userName = Engine.greet();
         Scanner sc = new Scanner(System.in);
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        for (int i = 0; i < 3; i++) {
-            int randomNumber = Engine.randomNumber(10);
+        for (int i = 0; i < Engine.getAnswerCount(); i++) {
+            int randomNumber = Engine.randomNumber(Engine.getRandomRange());
             System.out.format("Question: %d\n", randomNumber);
             String userResult = sc.nextLine();
-            boolean correctResult = isPrime(randomNumber);
-            if (userResult.equals("yes") && correctResult || userResult.equals("no") && !correctResult) {
+            String correctResult = userResult.equals("yes") ? "no" : "yes";
+            boolean primeNumber = isPrime(randomNumber);
+            if (userResult.equals("yes") && primeNumber || userResult.equals("no") && !primeNumber) {
                 System.out.println("Correct!");
             } else {
-                String correctAnswer = userResult.equals("yes") ? "no" : "yes";
                 System.out.format("Your answer: %s\n'%s' is wrong answer ;(. Correct answer was '%s'.\n"
-                        + "Let's try again, %s!", userResult, userResult, correctAnswer, userName);
+                        + "Let's try again, %s!", userResult, userResult, correctResult, userName);
                 System.exit(0);
             }
         }

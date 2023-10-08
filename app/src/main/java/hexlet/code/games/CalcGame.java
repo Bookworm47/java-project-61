@@ -5,33 +5,28 @@ import hexlet.code.Engine;
 import java.util.Scanner;
 
 public class CalcGame {
-    static int num1 = 0;
-    static int num2 = 0;
-    static int correctResult = 0;
-    static char operand = '*';
+    private static int num1 = 0;
+    private static int num2 = 0;
+    private static int correctResult = 0;
+    private static char operand = '*';
     public static void calcGame() {
         String userName = Engine.greet();
         Scanner sc = new Scanner(System.in);
         System.out.println("What is the result of the expression?");
-        for (int i = 0; i < 3; i++) {
-            correctAnswer();
+        for (int i = 0; i < Engine.getAnswerCount(); i++) {
+            calcGameLogic();
             System.out.format("Question: %d %s %d\n", num1, operand, num2);
             int userResult = sc.nextInt();
-            if (userResult == correctResult) {
-                System.out.println("Correct!");
-            } else {
-                System.out.format("Your answer: %d\n'%d' is wrong answer ;(. Correct answer was '%d'.\n"
-                        + "Let's try again, %s!", userResult, userResult, correctResult, userName);
-                System.exit(0);
-            }
+            Engine.answerCorrectOrNot(userResult, correctResult, userName);
         }
         System.out.format("Congratulations, %s!", userName);
     }
 
-    static void correctAnswer() {
-        int operandRn = (int) (Math.random() * 3) + 1;
-        num1 = Engine.randomNumber(10);
-        num2 = Engine.randomNumber(10);
+    static void calcGameLogic() {
+        int operandNumber = 3;
+        int operandRn = (int) (Math.random() * operandNumber) + 1;
+        num1 = Engine.randomNumber(Engine.getRandomRange());
+        num2 = Engine.randomNumber(Engine.getRandomRange());
         switch (operandRn) {
             case 1:
             default:
