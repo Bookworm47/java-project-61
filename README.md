@@ -3,7 +3,7 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/c0e34ba281a9057a8ffc/maintainability)](https://codeclimate.com/github/Bookworm47/java-project-first/maintainability)
 
-https://asciinema.org/a/gk6kkLMeJl3jqQeksOgKbeSYY - EvenGame
+[![asciicast]({https://asciinema.org/a/gk6kkLMeJl3jqQeksOgKbeSYY}.svg)]({https://asciinema.org/a/gk6kkLMeJl3jqQeksOgKbeSYY}) - EvenGame
 
 https://asciinema.org/a/6yW0E4XU5U2F61N58KYxrUvdu - CalcGame
 
