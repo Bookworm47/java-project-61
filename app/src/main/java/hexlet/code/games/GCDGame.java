@@ -1,31 +1,28 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
-import java.util.Scanner;
+import hexlet.code.Utils;
 
 public class GCDGame {
-    private static int num1 = 0;
-    private static int num2 = 0;
-    public static void gcdGame() {
-        String userName = Engine.greet();
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Find the greatest common divisor of given numbers.");
-        for (int i = 0; i < Engine.getAnswerCount(); i++) {
-            int correctResult = getGCD();
-            System.out.format("Question: %d %d\n", num1, num2);
-            System.out.print("Your answer: ");
-            int userResult = sc.nextInt();
-            Engine.answerCorrectOrNot(userResult, correctResult, userName);
-        }
-        System.out.format("Congratulations, %s!", userName);
-    }
+    private static final String[][] GCDGAMEQNA = new String[3][2];
 
-    static int getGCD() {
+    public static void gcdGame() {
+        int question = 0;
+        int answer = 1;
         final int randMinRange = 1;
         final int randomRange = 100;
-        num1 = Engine.randomNumber(randomRange) + randMinRange;
-        num2 = Engine.randomNumber(randomRange) + randMinRange;
-        return Engine.gcd(num1, num2);
+        int num1 = Utils.randomNumber(randomRange) + randMinRange;
+        int num2 = Utils.randomNumber(randomRange) + randMinRange;
+        for (int i = 0; i < Engine.ANSWERCOUNT; i++) {
+            int gcdResult = gcd(num1, num2);
+            GCDGAMEQNA[i][question] = num1 + " " + num2;
+            GCDGAMEQNA[i][answer] = Integer.toString(gcdResult);
+        }
+        String gcdQuestion = "Find the greatest common divisor of given numbers.";
+        Engine.gameEngine(gcdQuestion, GCDGAMEQNA);
+    }
+
+    public static int gcd(int a, int b) {
+        return (a % b == 0) ? Math.abs(b) : gcd(b, a % b);
     }
 }

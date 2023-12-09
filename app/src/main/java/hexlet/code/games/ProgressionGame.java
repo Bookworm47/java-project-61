@@ -1,41 +1,36 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class ProgressionGame {
-    private static final int PROGRESSIONLENGTH = 10;
-    private static String[] stringProgression = new String[PROGRESSIONLENGTH];
-    private static int correctResult;
-    public static void arithmeticProgression() {
-        String userName = Engine.greet();
-        Scanner sc = new Scanner(System.in);
-        System.out.println("What number is missing in the progression?");
-        for (int i = 0; i < Engine.getAnswerCount(); i++) {
-            correctResult = progressionLogic();
-            System.out.format("Question: " + Arrays.toString(stringProgression).
-                    replaceAll("[,\\[\\]]", "") + "\n");
-            System.out.print("Your answer: ");
-            int userResult = sc.nextInt();
-            Engine.answerCorrectOrNot(userResult, correctResult, userName);
-        }
-        System.out.format("Congratulations, %s!", userName);
-    }
+    private static final String[][] PROGRESSIONGAMEQNA = new String[3][2];
 
-    static int progressionLogic() {
-        int[] progression = new int[PROGRESSIONLENGTH];
+    public static void arithmeticProgression() {
+        int question = 0;
+        int answer = 1;
+        final int progressionLength = 10;
+        String[] stringProgression;
+        int correctResult;
+        int[] progression = new int[progressionLength];
         final int rangeOfFirstProgressionNumber = 100;
         final int randSecNumPos = 10;
-        progression[0] = Engine.randomNumber(rangeOfFirstProgressionNumber);
-        int secretNumberPosition = Engine.randomNumber(randSecNumPos);
-        for (int i = 1; i < progression.length; i++) {
-            progression[i] = progression[i - 1] + secretNumberPosition;
+        for (int i = 0; i < Engine.ANSWERCOUNT; i++) {
+            progression[0] = Utils.randomNumber(rangeOfFirstProgressionNumber);
+            int secretNumberPosition = Utils.randomNumber(randSecNumPos);
+            for (int j = 1; j < progression.length; j++) {
+                progression[j] = progression[j - 1] + secretNumberPosition;
+            }
+            correctResult = progression[secretNumberPosition];
+            stringProgression = Arrays.toString(progression).split(", ");
+            stringProgression[secretNumberPosition] = "..";
+            PROGRESSIONGAMEQNA[i][question] = Arrays.toString(stringProgression).
+                    replaceAll("[,\\[\\]]", "") + "\n";
+            PROGRESSIONGAMEQNA[i][answer] = Integer.toString(correctResult);
         }
-        correctResult = progression[secretNumberPosition];
-        stringProgression = Arrays.toString(progression).split(", ");
-        stringProgression[secretNumberPosition] = "..";
-        return correctResult;
+        String progressionQuestion = "What number is missing in the progression?";
+        Engine.gameEngine(progressionQuestion, PROGRESSIONGAMEQNA);
     }
 }

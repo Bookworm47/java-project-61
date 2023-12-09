@@ -3,12 +3,12 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/c0e34ba281a9057a8ffc/maintainability)](https://codeclimate.com/github/Bookworm47/java-project-first/maintainability)
 
-https://asciinema.org/a/gk6kkLMeJl3jqQeksOgKbeSYY - EvenGame
+[![asciicast](https://asciinema.org/a/611498.svg)](https://asciinema.org/a/611498)
 
-https://asciinema.org/a/6yW0E4XU5U2F61N58KYxrUvdu - CalcGame
+[![asciicast](https://asciinema.org/a/611947.svg)](https://asciinema.org/a/611947)
 
-https://asciinema.org/a/612158 - GCD
+[![asciicast](https://asciinema.org/a/612158.svg)](https://asciinema.org/a/612158)
 
-https://asciinema.org/a/612252 - Progression
+[![asciicast](https://asciinema.org/a/612252.svg)](https://asciinema.org/a/612252)
 
-https://asciinema.org/a/612310 - Prime
+[![asciicast](https://asciinema.org/a/612310.svg)](https://asciinema.org/a/612310)

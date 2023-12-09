@@ -1,31 +1,22 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
-import java.util.Scanner;
+import hexlet.code.Utils;
 
 public class PrimeGame {
+    private static final String[][] PRIMEGAMEQNA = new String[3][2];
 
     public static void primeGame() {
-        String userName = Engine.greet();
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        for (int i = 0; i < Engine.getAnswerCount(); i++) {
-            int randomNumber = Engine.randomNumber(Engine.getRandomRange());
-            System.out.format("Question: %d\n", randomNumber);
-            System.out.print("Your answer: ");
-            String userResult = sc.nextLine();
-            String correctResult = userResult.equals("yes") ? "no" : "yes";
-            boolean primeNumber = isPrime(randomNumber);
-            if (userResult.equals("yes") && primeNumber || userResult.equals("no") && !primeNumber) {
-                System.out.println("Correct!");
-            } else {
-                System.out.format("Your answer: %s\n'%s' is wrong answer ;(. Correct answer was '%s'.\n"
-                        + "Let's try again, %s!", userResult, userResult, correctResult, userName);
-                System.exit(0);
-            }
+        int question = 0;
+        int answer = 1;
+        for (int i = 0; i < Engine.ANSWERCOUNT; i++) {
+            int randomNumber = Utils.randomNumber(Utils.RANDOMRANGE);
+            String primeNumber = isPrime(randomNumber) ? "yes" : "no";
+            PRIMEGAMEQNA[i][question] = Integer.toString(randomNumber);
+            PRIMEGAMEQNA[i][answer] = primeNumber;
         }
-        System.out.format("Congratulations, %s!", userName);
+        String primeQuestion = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        Engine.gameEngine(primeQuestion, PRIMEGAMEQNA);
     }
 
     public static boolean isPrime(int number) {
