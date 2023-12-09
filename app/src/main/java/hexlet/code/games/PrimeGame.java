@@ -4,7 +4,8 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class PrimeGame {
-    private static final String[][] PRIMEGAMEQNA = new String[3][2];
+    private static final int ROUNDS = 3;
+    private static final String[][] PRIMEGAMEQNA = new String[ROUNDS][2];
 
     public static void primeGame() {
         int question = 0;

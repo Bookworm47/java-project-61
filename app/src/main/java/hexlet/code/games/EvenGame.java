@@ -4,7 +4,8 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class EvenGame {
-    private static final String[][] EVENGAMEQNA = new String[3][2];
+    private static final int ROUNDS = 3;
+    private static final String[][] EVENGAMEQNA = new String[ROUNDS][2];
 
     public static void evenGame() {
         int question = 0;

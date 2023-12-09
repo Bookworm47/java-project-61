@@ -4,7 +4,8 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class GCDGame {
-    private static final String[][] GCDGAMEQNA = new String[3][2];
+    private static final int ROUNDS = 3;
+    private static final String[][] GCDGAMEQNA = new String[ROUNDS][2];
 
     public static void gcdGame() {
         int question = 0;

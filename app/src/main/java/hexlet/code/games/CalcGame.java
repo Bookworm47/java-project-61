@@ -4,9 +4,9 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class CalcGame {
-
+    private static final int ROUNDS = 3;
     private static final String[] OPERATORS = new String[]{"+", "-", "*"};
-    private static final String[][] CALCGAMEQNA = new String[3][2];
+    private static final String[][] CALCGAMEQNA = new String[ROUNDS][2];
 
     public static void calcGame() {
         int question = 0;

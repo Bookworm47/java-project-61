@@ -6,7 +6,8 @@ import hexlet.code.Utils;
 import java.util.Arrays;
 
 public class ProgressionGame {
-    private static final String[][] PROGRESSIONGAMEQNA = new String[3][2];
+    private static final int ROUNDS = 3;
+    private static final String[][] PROGRESSIONGAMEQNA = new String[ROUNDS][2];
 
     public static void arithmeticProgression() {
         int question = 0;
