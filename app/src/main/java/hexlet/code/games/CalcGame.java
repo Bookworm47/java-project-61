@@ -3,8 +3,10 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
+import static hexlet.code.Engine.ROUNDS;
+
 public class CalcGame {
-    private static final int ROUNDS = 3;
+    private static String calcQuestion = "What is the result of the expression?";
     private static final String[] OPERATORS = new String[]{"+", "-", "*"};
     private static final String[][] CALCGAMEQNA = new String[ROUNDS][2];
 
@@ -20,7 +22,6 @@ public class CalcGame {
             CALCGAMEQNA[i][question] = num1 + " " + OPERATORS[operandRn] + " " + num2;
             CALCGAMEQNA[i][answer] = Integer.toString(correctResult);
         }
-        String calcQuestion = "What is the result of the expression?";
         Engine.gameEngine(calcQuestion, CALCGAMEQNA);
     }
 
@@ -29,7 +30,7 @@ public class CalcGame {
             case "+" -> num1 + num2;
             case "-" -> num1 - num2;
             case "*" -> num1 * num2;
-            default -> throw new RuntimeException("");
+            default -> throw new RuntimeException("Для оператора " + operator + " не определена логика.");
         };
         return correctResult;
     }

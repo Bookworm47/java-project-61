@@ -3,8 +3,10 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
+import static hexlet.code.Engine.ROUNDS;
+
 public class PrimeGame {
-    private static final int ROUNDS = 3;
+    private static String primeQuestion = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     private static final String[][] PRIMEGAMEQNA = new String[ROUNDS][2];
 
     public static void primeGame() {
@@ -16,7 +18,6 @@ public class PrimeGame {
             PRIMEGAMEQNA[i][question] = Integer.toString(randomNumber);
             PRIMEGAMEQNA[i][answer] = primeNumber;
         }
-        String primeQuestion = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         Engine.gameEngine(primeQuestion, PRIMEGAMEQNA);
     }
 

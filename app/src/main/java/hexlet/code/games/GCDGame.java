@@ -3,8 +3,10 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
+import static hexlet.code.Engine.ROUNDS;
+
 public class GCDGame {
-    private static final int ROUNDS = 3;
+    private static String gcdQuestion = "Find the greatest common divisor of given numbers.";
     private static final String[][] GCDGAMEQNA = new String[ROUNDS][2];
 
     public static void gcdGame() {
@@ -19,7 +21,6 @@ public class GCDGame {
             GCDGAMEQNA[i][question] = num1 + " " + num2;
             GCDGAMEQNA[i][answer] = Integer.toString(gcdResult);
         }
-        String gcdQuestion = "Find the greatest common divisor of given numbers.";
         Engine.gameEngine(gcdQuestion, GCDGAMEQNA);
     }
 

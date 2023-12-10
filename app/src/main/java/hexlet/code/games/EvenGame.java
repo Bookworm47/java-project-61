@@ -3,8 +3,10 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
+import static hexlet.code.Engine.ROUNDS;
+
 public class EvenGame {
-    private static final int ROUNDS = 3;
+    private static String evenQuestion = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     private static final String[][] EVENGAMEQNA = new String[ROUNDS][2];
 
     public static void evenGame() {
@@ -15,7 +17,6 @@ public class EvenGame {
             EVENGAMEQNA[i][question] = Integer.toString(randomNumber);
             EVENGAMEQNA[i][answer] = isEven(randomNumber) ? "yes" : "no";
         }
-        String evenQuestion = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         Engine.gameEngine(evenQuestion, EVENGAMEQNA);
     }
 
